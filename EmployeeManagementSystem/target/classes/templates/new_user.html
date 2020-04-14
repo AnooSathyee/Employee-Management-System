@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Registration Form</title>
+<script type="text/javascript">
+		function validate() {
+			var password = document.myForm.password.value;
+			var repassword = document.myForm.repassword.value;
+
+			if (password == null || password == "") {
+				alert("Passwords cannot be empty... ");
+				document.myForm.password.focus();
+				return false;
+			}
+
+			if (password != repassword) {
+				//alert("Passwords Do not match");
+				alert("Passwords not matching! Ensure the passwords matches... ");
+				document.myForm.password.focus();
+				return false;
+			}
+			return true;
+
+		}
+	</script>
+<link rel="stylesheet" href="../leftNav.css">
+</head>
+
+<body>
+
+	<div class="sidenav">
+		<a href="home">Home</a> 
+		<a href="new">Register User</a> 
+		<a href="add">Add Employee</a> 
+		<a href="logout">Logout</a>
+	</div>
+	
+	<div class="main">
+
+		<form action="#" name="myForm" onsubmit="return validate();"
+			th:action="@{/saveUser}" th:object="${user}" method="post">
+<img src="../emp.jpeg" alt="employee icon" width="250" height="200">
+		<div style="color: red;" th:if="${#fields.hasErrors('*')}">
+			<p>
+				<strong>Errors</strong>
+			</p>
+			<ul>
+				<li th:each="err : ${#fields.errors('*')}" th:text="${err}"></li>
+			</ul>
+		</div>
+
+			<h3>HR Admin Registration</h3>
+
+			<table cellpadding="10">
+
+				<tr>
+					<td><b>User Name</b><sup style="color: red">&#9913;</sup></td>
+					<td><input type="text" name="username" required="required"
+						th:field="*{name}" /></td>
+				</tr>
+				<tr>
+					<td><b>Email Id</b><sup style="color: red">&#9913;</sup></td>
+					<td><input type="text" placeholder="Enter Email"
+						name="Email_Id" required="required" th:field="*{email}" /></td>
+				</tr>
+				<tr>
+					<td><b>Password</b><sup style="color: red">&#9913;</sup></td>
+					<td><input type="password" placeholder="Password"
+						name="Password" required="required" th:field="*{password}" /></td>
+				</tr>
+				<tr>
+					<td><b>Confirm Password</b><sup style="color: red">&#9913;</sup></td>
+					<td><input type="password" placeholder="Repeat Password"
+						name="repassword" maxlength="100" required="required" /></td>
+				</tr>
+			</table>
+
+			<div class="clearfix">
+				<button type="submit" class="signupbtn">Sign Up</button>
+			</div>
+		</form>
+	</div>
+</body>
+
+</html>

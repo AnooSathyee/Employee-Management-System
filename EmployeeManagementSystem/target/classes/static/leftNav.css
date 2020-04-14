@@ -1,0 +1,55 @@
+@charset "ISO-8859-1";
+
+.sidenav {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(169, 231, 238);
+    overflow-x: hidden;
+    padding-top: 20px;
+  }
+  
+  .sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #353333;
+    display: block;
+  }
+  
+  .sidenav a:hover {
+    color: #050505;
+    font-weight: bold;
+  }
+  
+  .main {
+    margin-left: 250px; /* Same as the width of the sidenav */
+    font-size: 18px; /* Increased text to enable scrolling */
+    padding: 0px 10px;
+  }
+  
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
+
+  .clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+  .cancelbtn {
+      padding: 14px 20px;
+      background-color: #ec6960;
+  }
+
+  .cancelbtn, .signupbtn {
+      float: left;
+      background-color: #6db1f0;
+      padding: 5px;
+       width: 25%;
+  }

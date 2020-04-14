@@ -1,0 +1,108 @@
+@charset "ISO-8859-1";
+
+/* The side navigation menu */
+ 
+
+.container {
+    padding: 16px;
+            }
+            img {
+                            display: block;
+                            margin-left: auto;
+                            margin-right: auto;
+                }
+
+            input[type=text], input[type=password] {
+                width: 25%;
+                padding: 12px 20px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid #ccc;
+                box-sizing: border-box;
+            }
+
+            button {
+                background-color: rgb(9, 223, 134);
+                color: white;
+                padding: 14px 20px;
+                margin: 8px 0;
+                border: none;
+                cursor: pointer;
+                width: 32%;
+              }
+
+              #signup{
+                    background-color: rgb(9, 223, 134);
+                    color: white;
+                    padding: 14px 20px;
+                    margin: 8px 0;
+                    border: none;
+                    cursor: pointer;
+                    width: 32%;
+                  }
+              }
+
+              
+
+              .cancelbtn {
+                width: 32%;
+             }
+
+            /* h3{
+                font-family: Calibri; 
+                font-size: 25pt;         
+                font-style: normal; 
+                font-weight: bold; 
+                color:SlateBlue;
+                text-align: center; 
+                text-decoration: underline
+              }
+              
+              table{
+                font-family: Calibri; 
+                color:white; 
+                font-size: 11pt; 
+                font-style: normal;
+                font-weight: bold;
+                text-align:; 
+                background-color: rgb(147, 142, 182); 
+                border-collapse: collapse; 
+                border: 2px solid navy
+              }
+              table.inner{
+                border: 0px
+              }
+              */
+
+
+
+
+    /*.input_container {
+        background-color: var(--input_bg);
+        /* vertically align icon and text inside the div*/
+        display: flex;
+        align-items: center;
+        padding-left: 20px;
+    }
+
+    .input_container:hover {
+        background-color: var(--input_hover);
+    }
+
+    .input_container,
+    #input_submit {
+        height: 60px;
+        /* make the borders more round */
+        border-radius: 30px;
+        width: 100%;
+    }
+    #form_right {
+        
+        display: grid;
+        /* single column layout */
+        grid-template-columns: 1fr;
+        /* have some gap in between elements*/
+        grid-gap: 20px;
+    /* padding: 10% 5%;*/
+    }
+    */

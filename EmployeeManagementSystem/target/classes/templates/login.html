@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Login</title>
+
+<link rel="stylesheet" href="../style.css">
+</head>
+
+<body bgcolor="#F8F9F9 ">
+
+	
+		<img src="../emp.jpeg" alt="employee icon" width="192"
+			height="130">
+
+		<div>
+			<h3 align="Center">Member Login</h3>
+		</div>
+		 <form action="#" th:action="@{/validateUser}" th:object="${user}"
+			method="post">
+		<div class="container" align="Center">
+			<label><b>Username</b></label> 
+			<input type="text" name="email" placeholder="email" required="required" th:field="*{email}"><br> 
+			<label><b>Password</b></label>
+			<input type="password" name="password" placeholder="password" required="required" th:field="*{password}"><br>
+			<div th:switch="${user.email}">
+				<p th:case="null"></p>
+				<p style="color: red" th:case="*">Invalid username or password. Please re-enter</p>
+			</div>
+			<button type="submit">Login</button>
+			<!--  <button type="submit">
+				<div>
+					<a href="listEmployee"> Login </a>
+				</div>
+			</button>-->
+		</div>
+
+		<div align="Center">
+			<button id="signup" type="submit">
+				<div>
+					Not a member? <a href="new"> Sign up now </a>
+				</div>
+			</button>
+		</div>
+	</form>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edit Employee</title>
+
+<style>
+.clearfix::after {
+	content: "";
+	clear: both;
+	display: table;
+}
+/* .input{
+            padding: 5px;
+        }*/
+</style>
+<link rel="stylesheet" href="../leftNav.css">
+</head>
+
+<body>
+
+	<div class="sidenav">
+		<a href="home">Home</a> 
+		<a href="new">Register User</a> 
+		<a href="addEmployee">Add Employee</a> <a
+			href="logout">Logout</a>
+	</div>
+
+	<div class="main">
+		<form action="#" name="myForm" th:action="@{/save}" th:object="${employee}" method="post">
+			<!--  <div style="color: red;" th:if="${#fields.hasErrors('*')}">
+				<p>
+					<strong>Errors</strong>
+				</p>
+				<ul>
+					<li th:each="err : ${#fields.errors('*')}" th:text="${err}"></li>
+				</ul>
+			</div>-->
+			<img src="../emp.jpeg" alt="employee icon" width="192" height="130">
+
+			<h3>
+				<b>Edit Employee</b>
+			</h3>
+
+			<table>
+				<tr>
+					<td>Employee Id</td>
+					<td><input type="text" th:field="*{id}" readonly="readonly" />
+					</td>
+				</tr>
+				<tr>
+					<td>FirstName</td>
+					<td><input type="text" th:field="*{firstName}" /></td>
+				</tr>
+				<tr>
+					<td>LastName</td>
+					<td><input type="text" th:field="*{lastName}" /></td>
+				</tr>
+				<tr>
+					<td>DOB</td>
+					<td><input type="text" th:field="*{dob}" /></td>
+				</tr>
+				<tr>
+					<td>Gender</td>
+					<td><input type="text" th:field="*{gender}" /></td>
+				</tr>
+				<tr>
+					<td>Email</td>
+					<td><input type="text" th:field="*{email}" /></td>
+				</tr>
+				<tr>
+					<td>Address</td>
+					<td><input type="text" th:field="*{address}" /></td>
+				</tr>
+				
+				<tr>
+					<td><b>City</b></td>
+					<td><input type="text" name="City" th:field="*{city}"/></td>
+				</tr>
+				<tr>
+					<td><b>State</b></td>
+					<td><input type="text" name="State" th:field="*{state}"/></td>
+				</tr>
+				<tr>
+					<td><b>Zipcode</b></td>
+					<td><input type="text" name="Zipcode" th:field="*{zipcode}"/></td>
+				</tr>
+				<tr>
+					<td><b>Country</b></td>
+					<td><input type="text" name="Country" th:field="*{country}"/></td>
+				</tr>
+
+			</table>
+
+			<div class="clearfix">
+				<a href="employeeList.html">
+					<button type="submit" class="signupbtn">Submit</button>
+			</div>
+		</form>
+	</div>
+</body>
+</html>

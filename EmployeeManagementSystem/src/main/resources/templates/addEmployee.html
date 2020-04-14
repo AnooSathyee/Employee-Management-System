@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Add Employee</title>
+<!-- 
+<script type="text/javascript">
+	function validate() {
+		var password = document.myForm.password.value;
+		var repassword = document.myForm.repassword.value;
+
+		if (password == null || password == "") {
+			alert("Passwords cannot be empty... ");
+			document.myForm.password.focus();
+			return false;
+		}
+
+		if (password != repassword) {
+			//alert("Passwords Do not match");
+			alert("Passwords not matching! Ensure the passwords matches... ");
+			document.myForm.password.focus();
+			return false;
+		}
+		return true;
+
+	}
+</script>
+ -->
+<style>
+.clearfix::after {
+	content: "";
+	clear: both;
+	display: table;
+}
+/* .input{
+            padding: 5px;
+        }*/
+</style>
+<link rel="stylesheet" href="../leftNav.css">
+
+</head>
+<body>
+
+	<div class="sidenav">
+		<a href="home">Home</a> 
+		<a href="new">Register
+			User</a> <a href="addEmployee">Add Employee</a> <a
+			href="logout">Logout</a>
+	</div>
+
+	<div class="main">
+		<form action="#" name="myForm" onsubmit="return validate();"
+			th:action="@{/save}" th:object="${employee}" method="post">
+			<!--  <div style="color: red;" th:if="${#fields.hasErrors('*')}">
+				<p>
+					<strong>Errors</strong>
+				</p>
+				<ul>
+					<li th:each="err : ${#fields.errors('*')}" th:text="${err}"></li>
+				</ul>
+			</div>-->
+			<img src="../emp.jpeg" alt="employee icon"
+				width="192" height="130">
+
+			<h3>
+				<b>Add New Employee</b>
+			</h3>
+
+			<table>
+				<tr>
+					<td><label for="firstname"><b>First Name</b><sup style="color: red">&#9913;</sup></label></td>
+					<td><input type="text" name="First Name" required="required" th:field="*{firstName}" maxlength="50"
+						size="50"></td>
+				</tr>
+				<tr>
+					<td><label for="lastname"><b>Last Name</b><sup style="color: red">&#9913;</sup></label></td>
+					<td><input type="text" name="Last Name" required="required" th:field="*{lastName}" maxlength="50"
+						size="50"></td>
+				</tr>
+				
+				<tr>
+					<td><b> Date of Birth </b></td>
+					<td><input type="date" name="bday" th:field="*{dob}" ></td>
+				</tr>
+				<tr>
+					<td><b>Gender</b></td>
+					<td><input type="text" name="gender" th:field="*{gender}" />
+					</td>
+				</tr>
+				<tr>
+					<td><label for="email"><b>Email</b><sup style="color: red">&#9913;</sup></label></td>
+					<td><input type="text" name="email" required="required" th:field="*{email}" maxlength="50" size="50">
+					</td>
+				</tr>
+				<!--<tr>
+					<td><label for="password"><b>Password</b></label></td>
+					<td><input type="password" placeholder="Password"
+						name="password" th:field="*{password}" maxlength="100" required /></td>
+				</tr>-->
+
+			<!--  	<tr>
+					<td><b>Confirm Password</b></td>
+					<td><input type="password" placeholder="Repeat Password"
+						name="repassword" maxlength="100" required /></td>
+				</tr>
+				-->
+				
+				<tr>
+					<td><b>Address</b></td>
+					<td><input type="text" name="Address" th:field="*{address}" maxlength="30" size="50" />
+				</tr>
+
+				
+				<tr>
+					<td><b>City</b></td>
+					<td><input type="text" name="City" th:field="*{city}" maxlength="30" size="50" />
+				</tr>
+				<tr>
+					<td><b>State</b></td>
+					<td><input type="text" name="State" th:field="*{state}" maxlength="30" size="50" />
+					</td>
+				</tr>
+
+
+				<tr>
+					<td><b>Zipcode</b></td>
+					<td><input type="text" name="Zipcode" th:field="*{zipcode}" maxlength="30" size="50" /></td>
+				</tr>
+
+				<tr>
+					<td><b>Country</b></td>
+					<td><input type="text" name="Country" th:field="*{country}" size="50" /></td>
+				</tr>
+
+			</table>
+
+			<div class="clearfix">
+				<a href="employeeList.html">
+					<button type="submit" class="signupbtn">Submit</button>
+			</div>
+		</form>
+	</div>
+</body>
+</html>
